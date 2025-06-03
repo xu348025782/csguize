@@ -1,0 +1,50 @@
+# ========================
+# TikTok / 抖音国际版规则（扩展版）
+# ========================
+# 核心应用域名
+DOMAIN-KEYWORD,tiktok
+DOMAIN-KEYWORD,tiktokcdn
+DOMAIN-SUFFIX,tiktok.com
+DOMAIN-SUFFIX,tiktokcdn.com
+DOMAIN-SUFFIX,tiktokcdn-us.com
+DOMAIN-SUFFIX,tiktokv.com
+DOMAIN-SUFFIX,tik-tokapi.com
+
+# 字节跳动海外域名（核心服务）
+DOMAIN-SUFFIX,byteoversea.com
+DOMAIN-SUFFIX,ibytedtos.com
+DOMAIN-SUFFIX,ipstatp.com
+DOMAIN-SUFFIX,sgsnssdk.com
+DOMAIN-SUFFIX,muscdn.com
+DOMAIN-SUFFIX,musical.ly
+DOMAIN-SUFFIX,bytecdntp.com
+
+# TikTok 特定国家或地区 CDN 域名
+DOMAIN-SUFFIX,tiktokcdn-us.com
+DOMAIN-SUFFIX,tiktokcdn-eu.com
+DOMAIN-SUFFIX,tiktokcdn-uk.com
+DOMAIN-SUFFIX,tiktokcdn.in
+DOMAIN-SUFFIX,tiktokcdn.co
+DOMAIN-SUFFIX,tiktokcdn.us
+DOMAIN-SUFFIX,tiktokcdn.net
+DOMAIN-SUFFIX,tiktokcdn.live
+
+# CDN 平台及内容服务
+DOMAIN-SUFFIX,byteimg.com
+DOMAIN-SUFFIX,p16-tiktokcdn-com.akamaized.net
+DOMAIN-SUFFIX,p16-tiktokcdn-us.akamaized.net
+DOMAIN-SUFFIX,p16-tiktokcdn.com
+
+# TikTok API/服务端域名
+DOMAIN-SUFFIX,tik-tokapi.com
+DOMAIN-SUFFIX,api-h2.tiktokv.com
+DOMAIN-SUFFIX,log.tiktokv.com
+DOMAIN-SUFFIX,mon.tiktokv.com
+
+# 用户代理匹配（一般用于识别 App）
+USER-AGENT,TikTok*
+USER-AGENT,com.zhiliaoapp.musically*
+USER-AGENT,com.ss.android.ugc.trill*
+USER-AGENT,com.ss.android.ugc.aweme*
+
+# ========================
