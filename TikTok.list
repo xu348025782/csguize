@@ -1,16 +1,28 @@
 # ========================
-# TikTok / 抖音国际版规则（扩展版）
+# TikTok / 抖音国际版规则（flclash适配）
 # ========================
-# 核心应用域名
+
+# 匹配TikTok相关 User-Agent（用于识别 App 流量）
+USER-AGENT,TikTok*
+USER-AGENT,com.ss.android.ugc.aweme*
+USER-AGENT,com.ss.android.ugc.trill*
+USER-AGENT,com.zhiliaoapp.musically*
+
+# 主域名及通配域名匹配
 DOMAIN-KEYWORD,tiktok
 DOMAIN-KEYWORD,tiktokcdn
+
+# 核心服务域名
 DOMAIN-SUFFIX,tiktok.com
 DOMAIN-SUFFIX,tiktokcdn.com
 DOMAIN-SUFFIX,tiktokcdn-us.com
 DOMAIN-SUFFIX,tiktokv.com
 DOMAIN-SUFFIX,tik-tokapi.com
+DOMAIN-SUFFIX,api-h2.tiktokv.com
+DOMAIN-SUFFIX,log.tiktokv.com
+DOMAIN-SUFFIX,mon.tiktokv.com
 
-# 字节跳动海外域名（核心服务）
+# 字节跳动海外服务域名
 DOMAIN-SUFFIX,byteoversea.com
 DOMAIN-SUFFIX,ibytedtos.com
 DOMAIN-SUFFIX,ipstatp.com
@@ -20,7 +32,6 @@ DOMAIN-SUFFIX,musical.ly
 DOMAIN-SUFFIX,bytecdntp.com
 
 # TikTok 特定国家或地区 CDN 域名
-DOMAIN-SUFFIX,tiktokcdn-us.com
 DOMAIN-SUFFIX,tiktokcdn-eu.com
 DOMAIN-SUFFIX,tiktokcdn-uk.com
 DOMAIN-SUFFIX,tiktokcdn.in
@@ -29,22 +40,8 @@ DOMAIN-SUFFIX,tiktokcdn.us
 DOMAIN-SUFFIX,tiktokcdn.net
 DOMAIN-SUFFIX,tiktokcdn.live
 
-# CDN 平台及内容服务
+# TikTok CDN/内容服务平台
 DOMAIN-SUFFIX,byteimg.com
 DOMAIN-SUFFIX,p16-tiktokcdn-com.akamaized.net
 DOMAIN-SUFFIX,p16-tiktokcdn-us.akamaized.net
 DOMAIN-SUFFIX,p16-tiktokcdn.com
-
-# TikTok API/服务端域名
-DOMAIN-SUFFIX,tik-tokapi.com
-DOMAIN-SUFFIX,api-h2.tiktokv.com
-DOMAIN-SUFFIX,log.tiktokv.com
-DOMAIN-SUFFIX,mon.tiktokv.com
-
-# 用户代理匹配（一般用于识别 App）
-USER-AGENT,TikTok*
-USER-AGENT,com.zhiliaoapp.musically*
-USER-AGENT,com.ss.android.ugc.trill*
-USER-AGENT,com.ss.android.ugc.aweme*
-
-# ========================
