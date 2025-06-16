@@ -59,3 +59,8 @@ IP-CIDR,173.194.218.188/32,no-resolve
 # ========================
 DOMAIN-SUFFIX,chunman4.com
 DOMAIN-KEYWORD,chunman
+
+# ========================
+DOMAIN-SUFFIX,iturrit.com
+DOMAIN-KEYWORD,iturrit
+
