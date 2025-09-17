@@ -53,14 +53,100 @@ IP-CIDR,172.253.122.188/32,no-resolve
 IP-CIDR,173.194.175.188/32,no-resolve
 IP-CIDR,173.194.218.188/32,no-resolve
 
-
 # ========================
-# chunman4 
+# chunman4 / iturrit
 # ========================
 DOMAIN-SUFFIX,chunman4.com
 DOMAIN-KEYWORD,chunman
-
-# ========================
 DOMAIN-SUFFIX,iturrit.com
 DOMAIN-KEYWORD,iturrit
 
+# ================================
+# 🍑 常见成人站合集（50+）
+# ================================
+
+# Pornhub 系
+DOMAIN-SUFFIX,pornhub.com
+DOMAIN-SUFFIX,pornhubpremium.com
+DOMAIN-SUFFIX,phncdn.com
+DOMAIN-SUFFIX,phprcdn.com
+
+# XVideos / Xnxx
+DOMAIN-SUFFIX,xvideos.com
+DOMAIN-SUFFIX,xnxx.com
+DOMAIN-SUFFIX,xnxx-cdn.com
+
+# YouPorn
+DOMAIN-SUFFIX,youporn.com
+DOMAIN-SUFFIX,ypncdn.com
+
+# Redtube
+DOMAIN-SUFFIX,redtube.com
+DOMAIN-SUFFIX,redtubepremium.com
+
+# Brazzers / RealityKings / Mofos / DigitalPlayground
+DOMAIN-SUFFIX,brazzers.com
+DOMAIN-SUFFIX,brazzersnetwork.com
+DOMAIN-SUFFIX,realitykings.com
+DOMAIN-SUFFIX,mofos.com
+DOMAIN-SUFFIX,digitalplayground.com
+
+# OnlyFans / Fansly
+DOMAIN-SUFFIX,onlyfans.com
+DOMAIN-SUFFIX,fansly.com
+
+# 91 系列
+DOMAIN-SUFFIX,91porn.com
+DOMAIN-SUFFIX,91cdn.com
+DOMAIN-SUFFIX,91p20.space
+DOMAIN-SUFFIX,91p46.space
+DOMAIN-SUFFIX,91porny.com
+
+# Jav / FC2 / Avgle
+DOMAIN-SUFFIX,javlibrary.com
+DOMAIN-SUFFIX,javdb.com
+DOMAIN-SUFFIX,javmost.com
+DOMAIN-SUFFIX,javhd.com
+DOMAIN-SUFFIX,avgle.com
+DOMAIN-SUFFIX,fc2.com
+DOMAIN-SUFFIX,fc2hub.com
+DOMAIN-SUFFIX,fc2ppv.tv
+
+# 亚洲向 / 中文
+DOMAIN-SUFFIX,hanime.tv
+DOMAIN-SUFFIX,animeidhentai.com
+DOMAIN-SUFFIX,18comic.org
+DOMAIN-SUFFIX,18comic.vip
+DOMAIN-SUFFIX,wnacg.com
+DOMAIN-SUFFIX,jable.tv
+
+# 其他欧美主流
+DOMAIN-SUFFIX,tnaflix.com
+DOMAIN-SUFFIX,spankbang.com
+DOMAIN-SUFFIX,spankwire.com
+DOMAIN-SUFFIX,hclips.com
+DOMAIN-SUFFIX,porndig.com
+DOMAIN-SUFFIX,thumbzilla.com
+DOMAIN-SUFFIX,eporner.com
+DOMAIN-SUFFIX,nuvid.com
+DOMAIN-SUFFIX,tube8.com
+DOMAIN-SUFFIX,drtuber.com
+DOMAIN-SUFFIX,xtube.com
+DOMAIN-SUFFIX,slutload.com
+DOMAIN-SUFFIX,xhamster.com
+DOMAIN-SUFFIX,xhamsterlive.com
+DOMAIN-SUFFIX,chaturbate.com
+DOMAIN-SUFFIX,bongacams.com
+DOMAIN-SUFFIX,cam4.com
+DOMAIN-SUFFIX,livejasmin.com
+DOMAIN-SUFFIX,myfreecams.com
+DOMAIN-SUFFIX,metart.com
+
+# ================================
+# 社交媒体 / Twitter / X
+# ================================
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,twitpic.com
+DOMAIN-SUFFIX,periscope.tv
