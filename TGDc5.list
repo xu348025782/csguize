@@ -7,11 +7,3 @@
   - IP-CIDR6, 2001:b28:f23f::/48, SG, no-resolve
 
 
-# --- 域名规则 (按你要求统一走 SG) ---
-
-DOMAIN-SUFFIX,t.me
-DOMAIN-SUFFIX,tdesktop.com
-DOMAIN-SUFFIX,telegra.ph
-DOMAIN-SUFFIX,telegram.me
-DOMAIN-SUFFIX,telegram.org
-DOMAIN-SUFFIX,telesco.pe
