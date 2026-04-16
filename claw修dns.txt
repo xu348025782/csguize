@@ -1,0 +1,54 @@
+一、禁用 cloud-init 网络覆盖（关键）
+echo "network: {config: disabled}" > /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+二、清理旧 netplan 配置
+rm -f /etc/netplan/*.yaml
+三、新建 netplan（核心 DNS 固定）
+nano /etc/netplan/01-netcfg.yaml
+
+写入：
+
+network:
+    version: 2
+    renderer: networkd
+    ethernets:
+        ens5:
+            dhcp4: true
+            dhcp4-overrides:
+                use-dns: false
+            nameservers:
+                addresses:
+                  - 1.0.0.1
+                  - 1.1.1.1
+四、修复权限（避免 warning）
+chmod 600 /etc/netplan/01-netcfg.yaml
+五、应用配置
+netplan generate
+netplan apply
+六、重启系统（验证关键）
+reboot
+七、检查 DNS 是否生效
+resolvectl status
+八、正确结果必须是
+DNS Servers: 1.0.0.1 1.1.1.1
+
+❌ 不允许出现：
+
+8.8.8.8
+九、如果仍回弹（极少数情况）
+
+再执行一次兜底：
+
+systemctl restart systemd-networkd
+systemctl restart systemd-resolved
+十、最终结构（你现在系统状态）
+DHCP → 只负责IP
+netplan → 控制DNS（已锁死）
+cloud-init → 已禁用
+systemd-resolved → 执行解析
+一句话总结
+
+✔ DNS 永久固定的关键是：cloud-init 禁用 + netplan nameservers + DHCP 禁止下发 DNS
+
+如果你要，我可以帮你再做一版：
+
+👉 “DNS + TCP + initcwnd + BBR 一体化稳定方案（无回弹）”
