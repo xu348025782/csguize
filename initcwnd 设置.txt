@@ -1,0 +1,79 @@
+为了方便你随时查阅和维护，我将**「初始化设置」和「后期修改参数」**这两个场景整理成一份完整的操作手册。
+
+场景一：首次配置（实现开机自启且不失效）
+1. 编写脚本
+Bash
+nano /etc/rc.local
+在文件中粘贴以下内容：
+
+Bash
+#!/bin/bash
+# 等待网络就绪，防止命令执行时路由表尚未生成
+sleep 10
+current_route=$(ip route show default)
+if [ -n "$current_route" ]; then
+    # 这里以 100 为例，可根据需要调整
+    ip route replace $current_route initcwnd 100 initrwnd 100
+fi
+exit 0
+保存并退出（Ctrl+O, Enter, Ctrl+X），然后赋予执行权限：
+
+Bash
+chmod +x /etc/rc.local
+2. 建立系统服务（确保脚本被执行）
+这是防止重启失效的关键保险。
+
+Bash
+nano /etc/systemd/system/rc-local.service
+粘贴以下标准配置：
+
+Ini, TOML
+[Unit]
+Description=/etc/rc.local Compatibility
+ConditionFileIsExecutable=/etc/rc.local
+After=network-online.target
+
+[Service]
+Type=forking
+ExecStart=/etc/rc.local
+TimeoutSec=0
+RemainAfterExit=yes
+GuessMainPID=no
+
+[Install]
+WantedBy=multi-user.target
+3. 激活服务
+Bash
+systemctl daemon-reload
+systemctl enable rc-local
+systemctl start rc-local
+场景二：后期修改参数（当你觉得 100 太大或太小时）
+如果你发现 100 导致了网络不稳定，想改回 30 或 50，请按此流程操作：
+
+1. 修改配置文件（保证以后重启也用新参数）
+Bash
+nano /etc/rc.local
+将 initcwnd 100 initrwnd 100 改为你想要的数值（例如 50），保存退出。
+
+2. 让修改立即生效（无需重启）
+直接手动运行一遍该脚本，或者重启 rc-local 服务：
+
+Bash
+# 方法 A：直接运行脚本
+/etc/rc.local
+
+# 方法 B：重启服务（同样会执行脚本里的命令）
+systemctl restart rc-local
+3. 验证生效情况
+Bash
+ip route show
+看结果： 检查 default 开头的那一行，确认末尾的数字已经变更为你新设的值。
+
+💡 调优建议（经验值）
+10 (默认值)：最稳，但在高延迟环境下起步很慢。
+
+30 - 50 (推荐值)：万金油配置。兼顾了速度和稳定性，不容易因为瞬间流量过大被服务商或防火墙判定为异常。
+
+100 (激进值)：仅建议在链路质量极好（0 丢包）的情况下使用。如果发现 SSH 经常断连，首要操作就是把这个值降到 50 以下。
+
+总结： 只要 /etc/rc.local 文件存在且 rc-local.service 是 active 状态，你以后只需要修改 /etc/rc.local 里的数字，然后运行一下该脚本，就能实现“永久+立即”生效。
