@@ -68,6 +68,8 @@ systemctl restart rc-local
 Bash
 ip route show
 看结果： 检查 default 开头的那一行，确认末尾的数字已经变更为你新设的值。
+ip route get 8.8.8.8
+输出：cache initcwnd 100 initrwnd 100
 
 💡 调优建议（经验值）
 10 (默认值)：最稳，但在高延迟环境下起步很慢。
